@@ -22,7 +22,6 @@ resource "aws_security_group" "tool-sg" {
     to_port          = 22
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
   }
 
 
