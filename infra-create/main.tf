@@ -12,10 +12,10 @@ resource "aws_security_group" "tool-sg" {
   description = "${var.name}-sg"
 
   egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
     from_port        = 22
@@ -24,9 +24,9 @@ resource "aws_security_group" "tool-sg" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
-}
 
 
   tags = {
     Name = "${var.name}-sg"
   }
+}
