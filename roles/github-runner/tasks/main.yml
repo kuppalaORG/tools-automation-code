@@ -36,3 +36,5 @@
 
 - name: Configure Github Runner
   ansible.builtin.shell: ./config.sh --url https://github.com/kuppalaORG/tools-automation-code --token {{ token.stdout }} --runnergroup Default --name ec2 --labels rhel --work _work
+  args:
+    chdir: /actions-runner
