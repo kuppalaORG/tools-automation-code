@@ -1,6 +1,9 @@
 - name: SetUpPrompt
   ansible.builtin.shell: set-prompt github-runner
 
+- name: Add Github Runner User
+  ansible.builtin.user:
+    name: grunner
 
 - name: Create github directory
   ansible.builtin.file:
@@ -38,4 +41,4 @@
   ansible.builtin.shell: ./config.sh --url https://github.com/kuppalaORG/tools-automation-code --token {{ token.stdout }} --runnergroup Default --name ec2 --labels rhel --work _work
   args:
     chdir: /actions-runner
-  become_user: ec2-user
+  become_user: grunner
