@@ -47,7 +47,7 @@
     state: latest
 
 - name: Configure Github Runner
-  ansible.builtin.shell: echo ./config.sh --url https://github.com/kuppalaORG/tools-automation-code --token {{ token.stdout }} --runnergroup Default --name ec2 --labels rhel --work _work
+  ansible.builtin.shell:  ./config.sh --url https://github.com/kuppalaORG/tools-automation-code --token {{ token.stdout }} --runnergroup Default --name ec2 --labels rhel --work _work
   args:
     chdir: /actions-runner
   become_user: grunner
